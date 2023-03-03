@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Print GitHub event 🖨
         env:
-          GITHUB_EVENT: ${{ toJson(github.event) }}
+          #GITHUB_EVENT: ${{ toJson(github.event) }}
         run: echo "$GITHUB_EVENT"
       - name: Print the context 📋
         run: echo "context ${{ github.event.context }} state ${{ github.event.state }}"
