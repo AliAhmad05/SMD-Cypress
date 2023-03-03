@@ -1,0 +1,23 @@
+name: prettier
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: bahmutov/npm-install@v1
+
+      - name: Format source files
+        run: npm run format
+
+      - name: Update version badges
+        run: npm run badges
+
+      # commit any changed files
+      # https://github.com/mikeal/publish-to-github-action
+      - uses: mikeal/publish-to-github-action@master
