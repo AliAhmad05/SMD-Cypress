@@ -2,7 +2,8 @@
   "scripts": {
     "format": "prettier --write 'README.md'",
     "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run --spec cypress/e2e/SMD_smoke_testing.cy.js"
+    "cy:run": "npx cypress run --spec cypress/e2e/SMD_smoke_testing.cy.js",
+    "badges": "update-badge cypress"
   },
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
@@ -10,5 +11,10 @@
   },
   "dependencies": {
     "prettier": "^2.8.4"
+  },
+
+  "lint-staged": {
+      "*.{js,md}": [
+      "prettier --write"]
   }
 }
